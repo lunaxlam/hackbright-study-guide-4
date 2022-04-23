@@ -116,19 +116,19 @@ A: To add a new property to an object, just declare the property and give it a v
 SECTION 2: JavaScript for the Web
 
 Q: What is the back-end responsible for?
-A:
+A: JavaScript can be used on the server-side to handle back-end logic and can even program applications. 
 
 Q: What is the front-end responsible for?
-A:
+A: On the front-end JavaScript handles browser interactions like responding to events, forms, communicating with servers and updating web pages, storing data on the client side, geolocating, etc. 
 
 Q: What is the syntax for including inline JavaScript in your HTML file?
-A: 
+A: In the HTML document <body> </body>, add <script> </script> tags and write your JavaScript within the tags. 
 
 Q: What is the syntax for including a JavaScript file in your HTML?
-A:
+A: In the HTML document <body> </body>, add <script src=' '> </script> and link to the JavaScript file.
 
 Q: What is the DOM? What does DOM stand for?
-A:
+A: The Document Object Model (DOM) is the HTML response object converted into a tree of elements that can be manipulated. 
 
 Q: Know the terms for relationships in the DOM:
     - parent
@@ -138,38 +138,59 @@ Q: Know the terms for relationships in the DOM:
     - ancestor
 
 Q: How do you retrieve elements in the DOM?
-A: 
+A:
+    - Find HTML elements by ID: document.getElementByID("idName");
+    - Find HTML elements by tag name: document.getElementsByTagName("p");
+    - Find HTML elements by class name: document.getElementsByClassName("className");
+    - Find HTML elements by CSS selectors: document.querySelectorAll("p.intro");
+    - And more: https://www.w3schools.com/js/js_htmldom_elements.asp
 
 Q: What’s the difference between document.querySelector() and document.querySelectorAll()?
-A: 
+A: querySelector() returns the first matching element and querySelectorAll() returns a list of all matching elements.
 
 Q: How do you use document.querySelector?
-A: 
+A: Store the result into a variable and pass an argument for what you are trying to search for, i.e.:
+    const button = document.querySelector("button");
 
 Q: Methods and attributes to know for manipulating the DOM:
-    - .getAttribute()
-    - .setAttribute()
-    - .innerHTML
-    - .classList
-    - .classList.add()
-    - classList.remove()
-    - .classList.has()
-    - .style
+    - .getAttribute() - returns the value of a specified attribute on the element 
+
+        Return the ID of the element: 
+        const divID = div.getAttribute('id'); 
+
+    - .setAttribute() - sets the value of an attribute on the specified element
+
+        var b = document.querySelector('button');
+
+        b.setAttribute('name', 'helloButton');
+        b.setAttribute('disabled', '');
+
+    - .innerHTML - returns the HTML or XML mark-up contained within the element
+
+    - .classList - list of all classes attributed to the specified element 
+
+    - .classList.add() - adds the specified class to the element
+
+    - classList.remove() - removes the specified class of the element
+
+    - .classList.has() - check for specified class of the element 
+
+    - .style - returns the value of an element's style attribute 
 
 Q: What is an event listener?
-A:
+A: An event listener "listens" for a specified event to happen and then invokes a callback function that should run when the event occurs.
 
 Q: What are some common event types?
-A:
+A: Click an element, double-click an element, mouse over an element, change the value of an input event, submit a form.
 
 Q: How do you use .addEventListener()? What arguments do you pass to it?
-A:
+A: HTMLElement.addEventListener(eventType, callbackFunction);
 
 Q: When an event listener callback is called, an event object is passed by default. What does the event object tell you?
-A:
+A: The event object contains data about the event that occurred. We can figure out what the target event is, cancel the event, get the position of the mouse when the event occurred, etc. 
 
 Q: How do you prevent a form from submitting on a “submit” event?
-A:
+A: Use evt.preventDefault() - this will prevent the typical behavior from occurring. 
 
 
 SECTION 3: AJAX

@@ -196,31 +196,44 @@ A: Use evt.preventDefault() - this will prevent the typical behavior from occurr
 SECTION 3: AJAX
 
 Q: Why would you make an AJAX request instead of a regular server request?
-A: 
+A: Asynchronous JavaScript and XML (AJAX) is a technique that allows us to send and receive requests from a server without having to reload the browser page. We are able to handle asynchronous requests and update segments of the application. This results in less work for the browser and the server. 
 
 Q: What language are you using when you make an AJAX request?
-A: 
+A: We can use HTML strings but it is standard to use JavaScript Object Notation or JSON to send/receive data in the browser. 
 
 Q: What is the syntax for making a GET request?
-A: 
+A: request.args.get(' ') on the server-side and fetch(url, options) on the browser side. 
 
 Q: How do you use fetch? What is the purpose of calling .then on the result?
-A:
+A: fetch is a basic GET reqeust that we send to our server using AJAX. Calling .then returns a "promise" from the server that it will resopnd if the requested data is found. 
 
 Q: What route will be called in an AJAX request?
-A:
+A: Only the specifid flask route that is passed through the fetch method will be called in AJAX request.
 
 Q: A flask route that receives AJAX requests should return what data type?
-A:
+A: JSON
 
 Q: If you’re returning text?
-A: 
+A: You can request that the Response object is returend as text only - i.e. response.text()
 
 Q: If you’re returning data from a dictionary?
-A:
+A: You don't need to JSONIFY it.
 
 Q: What is the syntax for an AJAX post request? How is a post request different?
-A: 
+A: You must include the optional parameters:
+
+    fetch('flask-route, {
+        method: 'POST',
+        body: JSON.stringify(formInputs),
+        headers: {
+            'Content-Type': application/json',
+        },
+    })
+        .then(response = > response.json())
+        .then (responseJson => {
+            alert(responseJson.status);
+        });
+
 
 Q: Describe the order of events that happen during an AJAX request.
-A: 
+A: In a GET request - define the query string to append to the flask route URL and pass it through the 'fetch' function. Once we connect with the route, using .then we can retrieve the Response Object and convert it into the desired format. Next, using .then we can use the Response Object to mount on our aplication. 

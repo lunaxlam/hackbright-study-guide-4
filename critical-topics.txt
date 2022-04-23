@@ -1,0 +1,205 @@
+SECTION 1: JavaScript Syntax
+
+Q: How do you create a variable?
+A: Create a variable by declaring either 'const' or 'let' before the variable name.
+You must initialize all 'const' variables; 'let' variables can be assigned later. 
+
+Q: How do you write a conditional (if…else…) statements?
+A:  
+
+    if ( ) {
+        ... ;
+    } else if ( ) {
+        ... ;
+    } else {
+        ...
+    }
+
+Q: What’s the difference between == (equality) and `===` (strict equality) operators?
+A: The '==' operator denotes 'non-strict equality and so the string version of 42 and the number version of 42 will evaluate as equal.
+The '===' operator denotes 'strict-equality' and so the string version of 42 and the number version of 42 will not evaluate as equal.
+
+Q: What does the && operator do? What does the || operator do?
+A: && checks to see if both operand conditions evaluate to True and || checks if either one of the operands evaluate to True.
+
+Q: How do you write while loops in JavaScript?
+A: Initialize a variable that we can use to define our terminating condition if we are not using a break statement.
+
+    let i = 0;
+    while (i < 5) {
+        console.log(i);
+        i += 1; 
+    }
+
+Q: What’s the difference between let and const?
+A: 'let' means reassignment can occur; 'const' means that the value for the variable should be reassigned (contents may be mutated).
+
+Q: Console methods to know:
+    - console.log() - The method used to print/output a message to the web console.
+    - console.dir() - The method used to display a list of the properties of the JavaScript object passed in the parameter.
+
+Q: How do you define a function? 
+A:
+    function subtract(x, y) {
+        return x - y;
+    }
+
+Be able to recall syntax for:
+    - Declaring a function with the function keyword
+        
+        function subtract(x, y) {
+            return x - y;
+        }
+    - Arrow function
+
+        const subtract = (x,y) => {
+            return x-y;
+        };
+
+    - Inline anonymous function expression
+
+        const x = function (a, b) {return a * b}
+
+        Then we can use it like so by calling the variable name the same way we invoke any function: 
+        
+        let z = x(4, 3); 
+
+Q: When would you use each of the different styles of function?
+A: Arrow functions are best for shorter syntax and anonymous functions are best if not used often.
+
+Q: What is a template literal? What’s the syntax for writing a template literal? When would you use a template literal?
+A: Template literals are the same as formatted strings in Python. They must be wrapped in backticks ` ` and if a variable is passed then use $ { } to format the variable. 
+
+Q: How do you loop over all the elements of an array? How do you loop over all the indices of an arrray?
+A: Use "for ... of" to iterate through elements of an array and use "for ... in" to iterate the indices of an array. 
+
+Q: How do you index into an array? What happens when you try to access an index that doesn’t exist?
+A:  To index into an array, pass the iterative variable, i.e. for const states = [], we can use states[i].
+Beware JavaScript does not throw any "IndexErrors" and so you can accidentally get 'undefined' values that do not actually exist. 
+
+Q: Array methods to know:
+    - .push() - adds the element to the end of the array (same as 'append' in Python)
+    - .slice() - slices the array; uses (start, stop) but no step. 
+    - .includes() - checks for membership in the array; pass in the element that you are trying to search for 
+    - .pop() - removes the last element from the array 
+
+Q: What is a JavaScript object and how do you create one?
+A: A JavaScript object is like a Python dictionary object. To create one:
+
+    const name = {}
+
+Q: What is a property?
+A: In JavaScript, an object's attribute is referred to as "properties" or "keys". 
+They must be unique and can be strings or symbols. Their corresponding values can be any data type. 
+
+Q: How do you access the value of a property
+A: You can use "dot notation" or square brackets. 
+
+    Example:
+
+        const person {
+            name = 'John',
+            'age': 2,          
+        }
+    
+    We can access the person object's name by calling person.name or person[name].
+    To access the person object's age, use person.age or person['age']
+
+Q: What’s the syntax for adding a new property on an object?
+A: To add a new property to an object, just declare the property and give it a value:
+
+    person.nationality = 'American';
+    person.sex = 'Male';
+    person.language = 'English'
+
+
+SECTION 2: JavaScript for the Web
+
+Q: What is the back-end responsible for?
+A:
+
+Q: What is the front-end responsible for?
+A:
+
+Q: What is the syntax for including inline JavaScript in your HTML file?
+A: 
+
+Q: What is the syntax for including a JavaScript file in your HTML?
+A:
+
+Q: What is the DOM? What does DOM stand for?
+A:
+
+Q: Know the terms for relationships in the DOM:
+    - parent
+    - child
+    - sibling
+    - descendant
+    - ancestor
+
+Q: How do you retrieve elements in the DOM?
+A: 
+
+Q: What’s the difference between document.querySelector() and document.querySelectorAll()?
+A: 
+
+Q: How do you use document.querySelector?
+A: 
+
+Q: Methods and attributes to know for manipulating the DOM:
+    - .getAttribute()
+    - .setAttribute()
+    - .innerHTML
+    - .classList
+    - .classList.add()
+    - classList.remove()
+    - .classList.has()
+    - .style
+
+Q: What is an event listener?
+A:
+
+Q: What are some common event types?
+A:
+
+Q: How do you use .addEventListener()? What arguments do you pass to it?
+A:
+
+Q: When an event listener callback is called, an event object is passed by default. What does the event object tell you?
+A:
+
+Q: How do you prevent a form from submitting on a “submit” event?
+A:
+
+
+SECTION 3: AJAX
+
+Q: Why would you make an AJAX request instead of a regular server request?
+A: 
+
+Q: What language are you using when you make an AJAX request?
+A: 
+
+Q: What is the syntax for making a GET request?
+A: 
+
+Q: How do you use fetch? What is the purpose of calling .then on the result?
+A:
+
+Q: What route will be called in an AJAX request?
+A:
+
+Q: A flask route that receives AJAX requests should return what data type?
+A:
+
+Q: If you’re returning text?
+A: 
+
+Q: If you’re returning data from a dictionary?
+A:
+
+Q: What is the syntax for an AJAX post request? How is a post request different?
+A: 
+
+Q: Describe the order of events that happen during an AJAX request.
+A: 

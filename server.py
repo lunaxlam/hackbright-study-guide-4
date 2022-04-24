@@ -33,7 +33,7 @@ def get_puppies():
     """Return a URL linking to a photo of the requested number of puppies."""
 
     # get the form data from the AJAX request
-    num_puppies = request.args.get("num-puppies")
+    num_puppies = request.args.get("puppycount")
 
     # get the appropriate URL
     puppy_url = PUPPIES.get(num_puppies)

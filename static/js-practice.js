@@ -147,3 +147,29 @@ function showPuppies(results) {
 }
 
 // Your Code Here
+
+// find the DOM element and create an eventListener
+document.querySelector('#puppy-form').addEventListener('submit', (evt) => {
+  // prevent the form default behavior
+  evt.preventDefault();
+
+  // get user input from the form, this data gets passed through the AJAX response
+  // on ln 36 of the server.py, the request.args.get() accesses the form data through the query string
+  const puppycount = document.querySelector('#num-puppies').value;
+  console.log(puppycount)
+
+  // construct query string, looks like ?puppycount=1
+  const queryString = new URLSearchParams({puppycount}).toString()
+
+  // contact the server at the following route and include the form data as a query string
+  fetch(`/puppies.json?${queryString}`)
+    // wait for the Response object and get the object as JSON
+    .then(response => response.json())
+    // take the JSON object and do something
+    .then(responseJSON => {
+      // call the function and pass the JSON object
+      showPuppies(responseJSON);
+    })
+});
+
+

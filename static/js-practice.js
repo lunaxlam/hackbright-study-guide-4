@@ -154,6 +154,8 @@ document.querySelector('#puppy-form').addEventListener('submit', (evt) => {
   evt.preventDefault();
 
   // get user input from the form, this data gets passed through the AJAX response
+  // since the server cannot directly access form data inputted by the user
+  // since this all happens on the browser-side; just like in a regular GET request
   // on ln 36 of the server.py, the request.args.get() accesses the form data through the query string
   const puppycount = document.querySelector('#num-puppies').value;
   console.log(puppycount)
@@ -162,6 +164,7 @@ document.querySelector('#puppy-form').addEventListener('submit', (evt) => {
   const queryString = new URLSearchParams({puppycount}).toString()
 
   // contact the server at the following route and include the form data as a query string
+  // this is a regular GET request
   fetch(`/puppies.json?${queryString}`)
     // wait for the Response object and get the object as JSON
     .then(response => response.json())
